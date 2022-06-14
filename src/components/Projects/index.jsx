@@ -17,13 +17,13 @@ const Projects = () => {
         {
             name: "Web dev bootcamp",
             description: "Fully responsive modern website, can be used for bootcamp registration purposes.",
-            path: "javascript:void(0)",
+            path: "https://webdevbootcamp1.netlify.app/",
             image: WebDevBootcamp
         },
         {
             name: "TicTaeToe Game",
-            description: "Tic Tae Toe Game, responsive with all screen devices. 2 players can play against each other or 1 player vs computer",
-            path: "javascript:void(0)",
+            description: "Tic Tae Toe Game, responsive with all screens. 2 players can play against each other or 1 player vs computer",
+            path: "https://optimistic-engelbart-397d0a.netlify.app/",
             image: TicTaeToeGame
         }
     ])

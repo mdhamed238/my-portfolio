@@ -1,0 +1,130 @@
+@import '../../sass/constants.scss';
+
+.About {
+	width: 100%;
+	padding: 0 9%;
+	margin-top: 12%;
+
+
+	.container {
+		width: 100%;
+		margin-top: 15%;
+		// display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		.image {
+			width: 240px;
+			// margin: 0 auto;
+
+			img {
+				width: 100%;
+				border-radius: 10px;
+			}
+		}
+
+		.content {
+			display: flex;
+			flex-direction: column;
+			align-items: baseline;
+			justify-content: space-between;
+
+			.description {
+				font-size: 16px;
+				font-weight: 600;
+				color: $dark_gray;
+				max-width: 340px;
+				margin-bottom: 10px;
+			}
+
+			.assets {
+				display: flex;
+				flex-direction: column;
+				align-items: baseline;
+				justify-content: center;
+				span {
+					font-size: 18px;
+					font-weight: 600;
+					margin-top: 5px;
+				}
+			}
+
+			.button {
+				padding: 0.75rem;
+				background: $purple;
+				border: none;
+				outline: none;
+				border-radius: 4px;
+				color: #fff;
+				display: flex;
+				align-items: center;
+				margin-top: 30px;
+				cursor: pointer;
+				text-decoration: none;
+
+				img {
+					width: 20px;
+					margin-left: 8px;
+				}
+			}
+		}
+	}
+}
+
+// media queries
+
+@media screen and (min-width: 1090px) {
+	.About {
+		padding: 0 16%;
+	}
+}
+@media screen and (min-width: 992px) {
+	.container {
+		padding: 0 7%;
+	}
+}
+
+@media screen and (min-width: 650px) {
+	.container {
+		display: flex;
+	}
+}
+
+@media screen and (max-width: 768px) {
+	.content .description {
+		width: 260px;
+	}
+}
+
+@media screen and (max-width: 650px) {
+	.container .content {
+		margin-top: 40px;
+
+		.assets {
+			margin-top: 10px;
+		}
+	}
+}
+@media screen and (max-width: 650px) and (min-width: 500px) {
+	.container {
+		padding: 0 25%;
+	}
+}
+
+@media screen and (max-width: 500px) and (min-width: 450px) {
+	.container {
+		padding: 0 20%;
+	}
+}
+
+@media screen and (max-width: 450px) and (min-width: 400px) {
+	.container {
+		padding: 0 16%;
+	}
+}
+
+@media screen and (max-width: 400px) and (min-width: 350px) {
+	.container {
+		padding: 0 15%;
+	}
+}

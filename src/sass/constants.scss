@@ -1,0 +1,20 @@
+$purple: #6338fb;
+$light_purple: #bdabca;
+$dark_gray: #8a8a8a;
+$light_gray: #e7e7e7;
+$dark: #001424;
+
+.header {
+	text-align: center;
+
+	.title {
+		font-size: 28px;
+		font-weight: bold;
+		letter-spacing: 0.05rem;
+	}
+
+	.description {
+		color: $dark_gray;
+	}
+}
+

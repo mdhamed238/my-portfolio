@@ -1,25 +1,34 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState, useContext } from 'react'
+import { ThemeContext } from './context/ThemeContext'
+import Navbar from './components/Navbar'
+import Home from './components/Home'
+import About from './components/About'
+import Skills from './components/Skills'
+import Services from './components/Services'
+import Projects from './components/Projects'
+import ContactMe from './components/ContactMe'
+import Footer from './components/Footer'
+
+
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const { darkMode } = useContext(ThemeContext)
+
+	
+	return (
+		<>
+			<div className={darkMode ? 'container-dark' : 'container-light'}>
+				<Navbar />
+				<Home />
+				<About />
+				<Skills darkMode={darkMode} />
+				<Services darkMode={darkMode} />
+				<Projects />
+				<ContactMe darkMode={darkMode} />
+				<Footer />
+			</div>
+		</>
+	)
 }
 
-export default App;
+export default App

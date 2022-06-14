@@ -1,0 +1,135 @@
+@import '../../sass/constants.scss';
+
+.Projects {
+	width: 100%;
+	margin-top: 12%;
+
+	.portfolio {
+		position: relative;
+		margin-top: 80px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		gap: 6rem;
+
+		.left {
+			img {
+				width: 300px;
+				height: 180px;
+				border-radius: 10px;
+				border: 2px solid $purple;
+				cursor: pointer;
+				transition: all 0.2s ease-in-out;
+
+				&:hover {
+					transform: scale(1.2);
+				}
+			}
+		}
+
+		.right {
+			display: flex;
+			flex-direction: column;
+			align-items: baseline;
+			gap: 0.8rem;
+			min-width: fit-content;
+
+			.title {
+				font-size: 18px;
+				font-weight: bold;
+			}
+
+			.description {
+				color: $dark_gray;
+				max-width: 260px;
+			}
+
+			.button {
+				text-decoration: none;
+				background-color: $purple;
+				padding: 0.75rem 0.95rem;
+				border: none;
+				outline: none;
+				border-radius: 7px;
+				font-size: 18px;
+				color: white;
+				display: flex;
+				align-items: center;
+				justify-content: space-between;
+				cursor: pointer;
+
+				svg {
+					margin-left: 4px;
+					transition: all 0.2s linear;
+				}
+
+				&:hover svg {
+					transform: translateX(5px);
+				}
+			}
+		}
+
+		.pagination {
+			display: flex;
+			align-items: center;
+			gap: 5px;
+			position: absolute;
+			bottom: -80px;
+
+			.circle {
+				width: 8px;
+				height: 8px;
+				border-radius: 50%;
+				background-color: #999;
+
+				&.active {
+					background-color: $purple;
+				}
+			}
+		}
+
+		.pag-left {
+			margin-right: -2rem;
+			cursor: pointer;
+		}
+		.pag-right {
+			margin-left: -2rem;
+			cursor: pointer;
+		}
+	}
+}
+
+@media screen and (max-width: 900px) {
+	.Projects {
+		margin-top: 25%;
+	}
+	.portfolio {
+		flex-direction: column;
+		align-items: baseline;
+
+		.right {
+			margin-top: -4rem;
+
+			.button {
+				margin-top: 1rem;
+			}
+		}
+
+		.pag-left {
+			position: absolute;
+			left: 5%;
+			top: 19%;
+		}
+		.pag-right {
+			position: absolute;
+			right: 5%;
+			top: 19%;
+		}
+	}
+}
+
+@media screen and (max-width: 440px) {
+	.pag-left, .pag-right {
+		transform: translateY(-150px);
+	}
+}

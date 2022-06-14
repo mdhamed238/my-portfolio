@@ -1,0 +1,66 @@
+@import '../../sass/constants.scss';
+
+
+.Services {
+    width: 100%;
+	margin-top: 15%;
+    
+
+    .services {
+        margin-top: 80px;
+        padding: 0 8%;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+        justify-items: center;
+        gap: 3%;
+
+
+        .service {
+            position: relative;
+            width: 240px;
+            height: 280px;
+            padding: 1rem 2.25rem;
+            border: none;
+            outline: none;
+            border-radius: 6px;
+            box-shadow: 0 0 5px #888,
+                        0 0 5px #888;
+
+            display: flex;
+            flex-direction: column;
+            align-items: baseline;
+            justify-content: center;
+            gap: 12px;
+
+            &:hover {
+                box-shadow: 0 0 2px #888,
+                        0 0 2px #888;
+            }
+
+            .icon {
+                width: 42px;
+                height: 42px;
+            }
+
+            .title {
+                font-size: 24px;
+                font-weight: 600;
+                display: flex;
+                line-height: 1.75rem;
+            }
+
+            .button {
+                font-size: 18px;
+                font-weight: 600;
+                color: $purple;
+                justify-self: end;
+                display: flex;
+                gap: 7px;
+
+                position: absolute;
+                bottom: 30px;
+                cursor: pointer;
+            }
+        }
+    }
+}

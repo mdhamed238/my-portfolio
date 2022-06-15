@@ -4,6 +4,7 @@
 	width: 100%;
 
 	.container {
+		position: relative;
 		width: 72%;
 		margin-top: 100px;
 		padding: 0 6%;
@@ -19,7 +20,7 @@
 			justify-content: space-evenly;
 			gap: 14px 0;
 
-			svg {
+			a > svg {
 				margin: 0 15px;
 				width: 24px;
 				cursor: pointer;
@@ -101,16 +102,6 @@
 	}
 }
 
-@media screen and (min-width: 992px) and (max-width: 1094px) {
-	// .icons {
-	// 	margin-right: 20px;
-	// }
-}
-// @media screen and (min-width: 992px) {
-// 	.container {
-// 		padding: 0 5%;
-// 	}
-// }
 
 @media screen and (max-width: 992px) {
 	.Home {
@@ -154,6 +145,7 @@
 		.container {
 			.icons {
 				position: absolute;
+				top: 50%;
 				flex-direction: row;
 				gap: 20px;
 

@@ -55,7 +55,7 @@
             display: flex;
             gap: 20px;
 
-            svg {
+            a > svg {
                 cursor: pointer;
 
                 &:hover {
@@ -83,14 +83,14 @@
 
 @media screen and (max-width: 576px) {
     .Footer {
-        height: 350px;
+        height: 375px;
 
         .right {
             align-self: flex-end;
             flex-direction: column;
             justify-content: center;
             gap: 2rem;
-            margin-top: 3rem;
+            margin-top: 2.3rem;
 
 
             .links {

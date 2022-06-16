@@ -40,21 +40,23 @@ const ContactMe = ({ darkMode }) => {
     const sendEmail = (e) => {
         e.preventDefault();
 
-        // emailjs.sendForm('service_argmzea', 'template_5f89kkc', form.current, '6_fFIWWbVuILzbviD')
-        //     .then((result) => {
-        //         console.log(result.text);
-        //         resetFields()
-        //         notify("success")
-        //     }, (error) => {
-        //         console.log(error.text);
-        //     });
-
-        
-        if(!name || !email) notify({type: 'warning', msg: 'Please enter your name and email address'})
-        else if(!message) notify({type: 'warning', msg: 'Please enter a message'})
-        else notify({ type: 'success', msg: 'Thanks for contacting me' })
-        resetFields()
-    };
+        if (!name || !email) {
+            notify({ type: 'warning', msg: 'Please enter your name and email address' })
+            return
+        }
+        else if (!message) {
+            notify({ type: 'warning', msg: 'Please enter a message' })
+            return
+        }
+        emailjs.sendForm('service_argmzea', 'template_5f89kkc', form.current, '6_fFIWWbVuILzbviD')
+            .then((result) => {
+                console.log(result.text);
+                resetFields()
+                notify({ type: 'success', msg: 'Thanks for contacting me' })
+            }, (error) => {
+                console.log(error.text);
+            })
+    }
 
 
     return (

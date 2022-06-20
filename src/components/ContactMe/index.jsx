@@ -102,27 +102,41 @@ const ContactMe = ({ darkMode }) => {
                 </div>
                 <form ref={form} onSubmit={sendEmail} className={`contact-form ${darkMode ? 'dark' : ''}`}>
                     <input type="hidden" name="to_name" value="Mohamed Hamed" />
-                    <input
-                        type="text"
-                        name="name"
-                        placeholder="Name"
-                        value={name}
-                        onChange={(e) => setName(e.target.value)}
-                    />
-                    <input
-                        type="text"
-                        name="email"
-                        placeholder="Email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                    />
-                    <textarea
-                        type="text"
-                        name="message"
-                        placeholder="Message"
-                        value={message}
-                        onChange={(e) => setMessage(e.target.value)}
-                    />
+                    <div className="input-group">
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            value={name}
+                            onChange={(e) => setName(e.target.value)}
+                            className="input"
+                        />
+                        <label htmlFor="name" className="label">Name</label>
+                    </div>
+                    <div className="input-group">
+                        <input
+                            type="text"
+                            name="email"
+                            id="email"
+                            value={email}
+                            onChange={(e) => setEmail(e.target.value)}
+                            className="input"
+                        />
+                        <label htmlFor="email" className="label">Email</label>
+                    </div>
+                    <div className="input-group">
+                        <textarea
+                            type="text"
+                            name="message"
+                            id="message"
+                            className="input"
+                            value={message}
+                            onChange={(e) => setMessage(e.target.value)}
+                        />
+                        <label htmlFor="message" className="label">Message</label>
+                    </div>
+
+
                     <button className="button">Send Message
                         <img src={Message} alt="" />
                     </button>

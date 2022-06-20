@@ -51,20 +51,6 @@
 			align-items: baseline;
 			gap: 28px;
 
-			input,
-			textarea {
-				font-size: 17px;
-				background-color: #f3f3f3;
-				width: 305px;
-				padding: 0.8rem;
-				border: 2px solid $purple;
-				border-radius: 5px;
-
-				&:focus {
-					outline: none;
-					box-shadow: 0 0 10px rgb(113, 68, 145);
-				}
-			}
 
 			textarea {
 				max-width: 305px;
@@ -97,23 +83,53 @@
 				}
 			}
 
+			&.dark {
+				input,
+				textarea {
+					background-color: rgba($color: $dark, $alpha: 0.5);
+					caret-color: #fff;
+					color: #fff;
+				}
+			}
 
-            &.dark {
-                input, textarea {
-                    background-color: rgba($color: $dark, $alpha: 0.5);
-                    caret-color: #fff;
-                    color: #fff;
-                }
-            }
+			.input-group {
+				position: relative;
 
-            .feedBack {
-                margin-top: 20px;
-				padding: 2rem;
-                background: rgb(156, 128, 255);
-                color: $purple;
-                font-weight: 600;
-                
-            }
+				.input {
+					font-size: 17px;
+					background-color: #f3f3f3;
+					width: 305px;
+					padding: .8rem;
+					border-radius: 4px;
+					border: none;
+					outline: 2px solid $purple;
+					font: inherit;
+					color: #1a013a;
+					background-color: #f3f3f3;
+
+					&:focus {
+						background-color: #fff;
+					}
+				}
+
+				.label {
+					position: absolute;
+					top: 0;
+					left: 0;
+					transform: translate(25%, 50%);
+					transition: transform 0.25s;
+					color: $dark_gray;
+				}
+			}
+
+			.input:focus + .label {
+				transform: translate(10px, -50%) scale(0.8);
+				color: $purple;
+				font-weight: 500;
+				padding-inline: 5px;
+				padding-top: none !important;
+				background-color: #fff;
+			}
 		}
 	}
 }

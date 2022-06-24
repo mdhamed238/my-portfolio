@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import emailjs from '@emailjs/browser';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css'
@@ -15,6 +15,26 @@ const ContactMe = ({ darkMode }) => {
     const [message, setMessage] = useState("")
 
 
+    useEffect(() => {
+        const fields = [...form.current.elements].slice(1, 4)
+
+        fields.forEach(field => {
+            if(darkMode) field.classList.add('dark')
+            else field.classList.remove('dark')
+
+            if (field.value == '') {
+                field.classList.remove('valid')
+                field.classList.add('invalid')
+            }
+            else {
+                field.classList.add('valid')
+                field.classList.remove('invalid')
+            }
+        })
+
+    }, [name, email, message, darkMode])
+
+
     const form = useRef()
     const notify = ({ type, msg }) => {
         if (type === "success") toast.success(msg);
@@ -28,7 +48,6 @@ const ContactMe = ({ darkMode }) => {
     //         success: "Thanks for contacting me",
     //         error: 'Something went wrong'
     //     })
-
 
 
     const resetFields = () => {
@@ -137,7 +156,9 @@ const ContactMe = ({ darkMode }) => {
                     </div>
 
 
-                    <button className="button">Send Message
+                    <button
+                        className="button"
+                    >Send Message
                         <img src={Message} alt="" />
                     </button>
                 </form>
